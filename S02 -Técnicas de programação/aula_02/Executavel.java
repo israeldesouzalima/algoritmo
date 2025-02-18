@@ -1,5 +1,6 @@
   package aula_02;
-
+  import javax.swing.JOptionPane;
+  
 public class Aula_02 {
 
 	public static void main(String[] args) {
@@ -9,17 +10,19 @@ public class Aula_02 {
 		bc.titular = "Fulano";
 		bc.saldo = 45.98;
 		
-		System.out.println("Saldo atual: "+bc.saldo);
-				
+		JOptionPane.showMessageDialog(null, "Saldo Inicial: "+bc.saldo);
+		
 		bc.depositar(90.55);
 		
-		if (bc.sacar(136.54)) {
-			System.out.println("Sucesso!!");
+		if (bc.sacar(136.50)) {
+			JOptionPane.showMessageDialog(null, "Saque realizado com sucesso");
 		} else {
-			System.out.println("Não sucedido, tente novamente!");
+			JOptionPane.showMessageDialog(null, "Saque não sucedido, tente novamente!");
 		}
 		
-		System.out.println(bc.consultar());
+		JOptionPane.showMessageDialog(null, "Saldo atual: "+bc.saldo);
+		
+		
 		
 
 		
