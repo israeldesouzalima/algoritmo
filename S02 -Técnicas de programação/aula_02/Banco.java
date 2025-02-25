@@ -1,4 +1,4 @@
-package aula_02;
+package aula3;
 
 public class Banco {
 
@@ -20,11 +20,18 @@ public class Banco {
 	}
 
 	public String consultar() {
-		return "Saldo: " + this.saldo + " -- Titular: " + this.titular + " -- Numero da conta: " + this.numeroConta;
+		return "\n Saldo: " + this.saldo + " -- Titular: " + this.titular + " -- Numero da conta: " + this.numeroConta;
 	}
 
-	public void transferir() {
+	public boolean transferir(double valor, Banco outraConta) {
 
+		if (this.sacar(valor)) {
+			outraConta.depositar(valor);
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 
 }
